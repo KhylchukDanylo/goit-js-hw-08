@@ -5,7 +5,7 @@ import { galleryItems } from './gallery-items';
 // Change code below this line
 
 console.log(galleryItems);
-console.log('kk');
+
 const gallery = document.querySelector('.gallery');
 
 const imageMarkup = creatSrtElmGallImg(galleryItems);
