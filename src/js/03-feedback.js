@@ -6,15 +6,17 @@ const valEmail = form.elements.email;
 const valMessage = form.elements.message;
 
 const userData = { email: '', message: '' };
-
+userData.email = valEmail.value;
+userData.message = valMessage.value;
 const saveData = throttle(function () {
   localStorage.setItem('feedback-form-state', JSON.stringify(data));
 }, 500);
 
-form.addEventListener('keyup', onEmail);
-function onEmail() {
+form.addEventListener('input', onDate);
+function onDate() {
   userData.email = valEmail.value;
   userData.message = valMessage.value;
+  localStorage.setItem('feedback-form-state', JSON.stringify(userData));
 }
 const sevedUserDate = localStorage.getItem('feedback-form-state');
 const parsedUserDate = JSON.parse(sevedUserDate);
@@ -26,10 +28,8 @@ btnSubmit.addEventListener('click', onClickSubmit);
 function onClickSubmit(e) {
   e.preventDefault();
   console.log(parsedUserDate);
-  console.log(userData);
-
-  localStorage.setItem('feedback-form-state', JSON.stringify(userData));
 
   valEmail.value = ' ';
   valMessage.value = ' ';
+  localStorage.clear();
 }
