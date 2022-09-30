@@ -1,1 +1,0 @@
-{"mappings":"AACAA,QAAQC,IAAI","sources":["src/js/02-video.js"],"sourcesContent":["// import Player from '@vimeo/player';\nconsole.log('123');\n"],"names":["console","log"],"version":3,"file":"02-video.3562fa0b.js.map"}
